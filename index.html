@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilumin Eyes - Eyelash Extensions in Tampines, Singapore</title>
+    <meta name="description" content="Premium eyelash extensions at Ilumin Eyes. Located in Tampines, Singapore. Get beautiful, natural-looking lashes.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #2d2d2d;
+            --gold: #c9a962;
+            --gold-light: #e8d5b7;
+            --gold-dark: #a68b4b;
+            --cream: #faf8f5;
+            --white: #ffffff;
+            --text: #333333;
+            --text-light: #666666;
+            --text-lighter: #999999;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+        body {
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            color: var(--text);
+            line-height: 1.8;
+            background: var(--cream);
+            overflow-x: hidden;
+        }
+
+        /* Elegant Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--gold);
+            border-radius: 4px;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+
+        nav.scrolled {
+            padding: 15px 8%;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.08);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6em;
+            font-weight: 600;
+            color: var(--primary);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .logo span {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 45px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75em;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: var(--white);
+            padding: 14px 32px;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(135deg, #f5f0eb 0%, #ebe4da 50%, #e8dcd0 100%);
+            padding: 0 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 20% 30%, rgba(201,169,98,0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 70%, rgba(201,169,98,0.06) 0%, transparent 50%);
+        }
+
+        /* Decorative elements */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 150px;
+            height: 150px;
+            border: 1px solid var(--gold-light);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        .hero-decoration {
+            position: absolute;
+            border: 1px solid var(--gold-light);
+            opacity: 0.2;
+        }
+
+        .hero-decoration-1 {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            bottom: -100px;
+            right: -50px;
+        }
+
+        .hero-decoration-2 {
+            width: 200px;
+            height: 200px;
+            top: 150px;
+            left: -50px;
+            transform: rotate(45deg);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8em;
+            letter-spacing: 8px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5em;
+            font-weight: 400;
+            margin-bottom: 25px;
+            color: var(--primary);
+            line-height: 1.15;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.5s forwards;
+        }
+
+        .hero h1 i {
+            font-family: 'Playfair Display', serif;
+            color: var(--gold);
+            font-style: italic;
+            font-weight: 400;
+        }
+
+        .hero p {
+            font-size: 1.25em;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            font-weight: 400;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.7s forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.9s forwards;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            padding: 18px 50px;
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(201,169,98,0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 18px 50px;
+            border: 1px solid var(--primary);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        /* Section Divider */
+        .section-divider {
+            text-align: center;
+            margin: 20px 0 60px;
+        }
+
+        .section-divider span {
+            display: inline-block;
+            width: 60px;
+            height: 1px;
+            background: var(--gold);
+            margin: 0 15px;
+            position: relative;
+            vertical-align: middle;
+        }
+
+        .section-divider span::before {
+            content: '✦';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--cream);
+            padding: 0 10px;
+            color: var(--gold);
+            font-size: 0.6em;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 120px 8%;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-title h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            font-weight: 400;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .section-title p {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text-light);
+            font-size: 0.85em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            text-align: center;
+            padding: 50px 35px;
+            background: var(--cream);
+            border: 1px solid rgba(201,169,98,0.15);
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.08);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background: var(--white);
+            border: 1px solid var(--gold-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 2.2em;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--gold);
+            border-color: var(--gold);
+        }
+
+        .service-card:hover .service-icon span {
+            filter: brightness(0) invert(1);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            font-weight: 500;
+            margin-bottom: 18px;
+            color: var(--primary);
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 1.05em;
+            line-height: 1.8;
+        }
+
+        .service-price {
+            display: block;
+            margin-top: 25px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8em;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about {
+            padding: 120px 8%;
+            background: linear-gradient(135deg, #f8f5f0 0%, #f0ebe3 100%);
+            display: flex;
+            align-items: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            right: -200px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(201,169,98,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .about-image {
+            flex: 1;
+            min-width: 350px;
+            height: 500px;
+            background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold) 100%);
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: -15px;
+            bottom: -15px;
+            border: 1px solid var(--gold);
+            border-radius: 5px;
+            z-index: -1;
+        }
+
+        .about-content {
+            flex: 1;
+            min-width: 350px;
+        }
+
+        .about-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75em;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            font-weight: 400;
+            margin-bottom: 35px;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .about p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            font-size: 1.15em;
+            line-height: 1.9;
+        }
+
+        /* Location Section */
+        .location {
+            padding: 120px 8%;
+            background: var(--white);
+        }
+
+        .location-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .location-info h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+
+        .location-details {
+            list-style: none;
+        }
+
+        .location-details li {
+            padding: 25px 0;
+            border-bottom: 1px solid rgba(201,169,98,0.2);
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .location-details li:last-child {
+            border-bottom: none;
+        }
+
+        .location-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--cream);
+            border: 1px solid var(--gold-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2em;
+        }
+
+        .location-details li strong {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.7em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .location-details li span {
+            color: var(--text-light);
+            font-size: 1.05em;
+            line-height: 1.7;
+        }
+
+        .map-placeholder {
+            height: 450px;
+            background: var(--cream);
+            border: 1px solid var(--gold-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-lighter);
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8em;
+            letter-spacing: 2px;
+        }
+
+        /* Testimonial Section */
+        .testimonials {
+            padding: 120px 8%;
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .testimonial-slider {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            padding: 40px;
+        }
+
+        .testimonial-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8em;
+            font-style: italic;
+            color: var(--primary);
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-author {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 120px 8%;
+            background: linear-gradient(135deg, var(--primary) 0%, #0d0d0d 100%);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(ellipse at 30% 20%, rgba(201,169,98,0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 80%, rgba(201,169,98,0.08) 0%, transparent 50%);
+        }
+
+        .contact-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3em;
+            font-weight: 400;
+            margin-bottom: 25px;
+        }
+
+        .contact-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 50px;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 40px;
+            border-radius: 0;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.4s ease;
+        }
+
+        .whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+
+        .phone {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+        }
+
+        .phone:hover {
+            background: white;
+            color: var(--primary);
+            border-color: white;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 8%;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4em;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        footer p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75em;
+            letter-spacing: 1px;
+            opacity: 0.5;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 900px) {
+            .hero h1 {
+                font-size: 2.8em;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .location-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about {
+                flex-direction: column;
+            }
+
+            .about-image {
+                width: 100%;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">Ilumin<span>Eyes</span></div>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#location">Location</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="cta-button">Book Now</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-decoration hero-decoration-1"></div>
+        <div class="hero-decoration hero-decoration-2"></div>
+        
+        <div class="hero-content">
+            <p class="hero-subtitle">Premium Eyelash Extensions</p>
+            <h1>Enhance Your <i>Natural</i> Beauty</h1>
+            <p>Experience the art of beautiful lashes at our elegant studio in Tampines. Where sophistication meets serenity.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">Book Appointment</a>
+                <a href="#services" class="btn-secondary">Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <div class="section-divider"><span></span></div>
+            <p>Curated treatments for the discerning client</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><span>✨</span></div>
+                <h3>Classic Elegance</h3>
+                <p>One-to-one application for timeless, natural-looking lashes that accentuate your eyes beautifully.</p>
+                <span class="service-price">[Price Coming Soon]</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><span>💧</span></div>
+                <h3>Wet Lash Series</h3>
+                <p>Our signature technique achieving a soft, glossy wet-look finish with effortlessly glamorous results.</p>
+                <span class="service-price">[Price Coming Soon]</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><span>🌟</span></div>
+                <h3>Volume Perfection</h3>
+                <p>Lightweight fans create dramatic yet feather-light volume for those who crave glamorous lashes.</p>
+                <span class="service-price">[Price Coming Soon]</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><span>🦋</span></div>
+                <h3>Russian Volume</h3>
+                <p>Ultra-fine fans of 2-6 lashes per natural lash create maximum drama with minimum weight.</p>
+                <span class="service-price">[Price Coming Soon]</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><span>💆</span></div>
+                <h3>Lash Lift & Tint</h3>
+                <p>Curling and tinting treatment that lifts and darkens your natural lashes for an effortlessly polished look.</p>
+                <span class="service-price">[Price Coming Soon]</span>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><span>🌸</span></div>
+                <h3>Lash Spa</h3>
+                <p>Conditioning treatment infused with nutrients to strengthen and nourish your natural lashes.</p>
+                <span class="service-price">[Price Coming Soon]</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-image">
+            [Your Photo Here]
+        </div>
+        <div class="about-content">
+            <p class="about-subtitle">Our Story</p>
+            <h2>The Art of Beautiful Lashes</h2>
+            <p>Welcome to Ilumin Eyes, where beauty meets artistry in the heart of Tampines. We believe that exquisite lashes are not just about appearance—they're about the confidence that blossoms from within.</p>
+            <p>Every client is unique, and we pride ourselves on creating a personalized experience that enhances your individual beauty. Using only premium products and meticulous techniques, we ensure results that exceed expectations.</p>
+            <p>Step into our serene studio and let us pamper you with the attention you deserve.</p>
+            <a href="#contact" class="btn-primary">Book Your Session</a>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-title">
+            <h2>Client Love</h2>
+            <div class="section-divider"><span></span></div>
+            <p>What our clients say</p>
+        </div>
+        <div class="testimonial-slider">
+            <div class="testimonial">
+                <p class="testimonial-text">"I've never felt more confident. The attention to detail is incredible, and my lashes look naturally stunning. Wouldn't go anywhere else!"</p>
+                <p class="testimonial-author">— A Happy Client</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="location">
+        <div class="location-content">
+            <div class="location-info">
+                <h2>Visit Our Studio</h2>
+                <ul class="location-details">
+                    <li>
+                        <div class="location-icon">📍</div>
+                        <div>
+                            <strong>Address</strong>
+                            <span>Arc@Tampines<br>Tampines Avenue 8, Block 11<br>Singapore 529599</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="location-icon">🕐</div>
+                        <div>
+                            <strong>Hours</strong>
+                            <span>[Coming Soon]</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="location-icon">📞</div>
+                        <div>
+                            <strong>Phone</strong>
+                            <span>[Coming Soon]</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="location-icon">🚇</div>
+                        <div>
+                            <strong>Transport</strong>
+                            <span>Tampines West MRT (Downtown Line)<br>Walking distance from station</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="map-placeholder">
+                [Google Maps Embed]
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <h2>Begin Your Journey</h2>
+            <p class="contact-subtitle">Book your consultation today</p>
+            <div class="contact-buttons">
+                <a href="#" class="contact-btn whatsapp">📱 WhatsApp Us</a>
+                <a href="#" class="contact-btn phone">📞 Call Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-logo">Ilumin<span>Eyes</span></div>
+        <p>© 2026 Ilumin Eyes. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
