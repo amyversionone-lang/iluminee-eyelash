@@ -432,6 +432,71 @@
             font-weight: 600;
         }
 
+        /* Pricing Category Styles */
+        .pricing-category {
+            margin-bottom: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .category-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8em;
+            color: var(--primary);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .category-desc {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            color: var(--text-light);
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .pricing-item {
+            background: var(--white);
+            border: 1px solid rgba(201,169,98,0.2);
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-item:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .pricing-item .service-name {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8em;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text);
+            margin-bottom: 10px;
+        }
+
+        .pricing-item .service-price {
+            display: block;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6em;
+            color: var(--gold);
+            font-weight: 600;
+            margin-top: 0;
+            letter-spacing: 0;
+        }
+
         /* About Section */
         .about {
             padding: 120px 8%;
@@ -817,44 +882,89 @@
         <div class="section-title">
             <h2>Our Services</h2>
             <div class="section-divider"><span></span></div>
-            <p>Curated treatments for the discerning client</p>
+            <p>Premium lash services at transparent prices</p>
         </div>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><span>✨</span></div>
-                <h3>Classic Elegance</h3>
-                <p>One-to-one application for timeless, natural-looking lashes that accentuate your eyes beautifully.</p>
-                <span class="service-price">[Price Coming Soon]</span>
+
+        <div class="pricing-category">
+            <h3 class="category-title">Classic Series — One by One</h3>
+            <p class="category-desc">Individual lash application for a natural, elegant look</p>
+            <div class="pricing-grid">
+                <div class="pricing-item">
+                    <span class="service-name">Model Look</span>
+                    <span class="service-price">$68</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="service-name">Natural Look</span>
+                    <span class="service-price">$78</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="service-name">Doll Look</span>
+                    <span class="service-price">$88</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="service-name">Cat Eye</span>
+                    <span class="service-price">$98</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="service-name">Removal</span>
+                    <span class="service-price">$25</span>
+                </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon"><span>💧</span></div>
-                <h3>Wet Lash Series</h3>
-                <p>Our signature technique achieving a soft, glossy wet-look finish with effortlessly glamorous results.</p>
-                <span class="service-price">[Price Coming Soon]</span>
+        </div>
+
+        <div class="pricing-category">
+            <h3 class="category-title">Russian Volume</h3>
+            <p class="category-desc">Multi-lashes per 1 natural lash — dramatic volume</p>
+            <div class="pricing-grid">
+                <div class="pricing-item">
+                    <span class="service-name">3D / 4D</span>
+                    <span class="service-price">$118</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="service-name">5D / 6D</span>
+                    <span class="service-price">$138</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="service-name">7D / 8D</span>
+                    <span class="service-price">$158</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="service-name">Removal</span>
+                    <span class="service-price">$35</span>
+                </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon"><span>🌟</span></div>
-                <h3>Volume Perfection</h3>
-                <p>Lightweight fans create dramatic yet feather-light volume for those who crave glamorous lashes.</p>
-                <span class="service-price">[Price Coming Soon]</span>
+        </div>
+
+        <div class="pricing-category">
+            <h3 class="category-title">Wet Lash Series</h3>
+            <p class="category-desc">Soft, glossy wet-look finish</p>
+            <div class="pricing-grid">
+                <div class="pricing-item">
+                    <span class="service-name">Wet Look (Full)</span>
+                    <span class="service-price">$138</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="service-name">Wet Look (Half)</span>
+                    <span class="service-price">$88</span>
+                </div>
             </div>
-            <div class="service-card">
-                <div class="service-icon"><span>🦋</span></div>
-                <h3>Russian Volume</h3>
-                <p>Ultra-fine fans of 2-6 lashes per natural lash create maximum drama with minimum weight.</p>
-                <span class="service-price">[Price Coming Soon]</span>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><span>💆</span></div>
-                <h3>Lash Lift & Tint</h3>
-                <p>Curling and tinting treatment that lifts and darkens your natural lashes for an effortlessly polished look.</p>
-                <span class="service-price">[Price Coming Soon]</span>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><span>🌸</span></div>
-                <h3>Lash Spa</h3>
-                <p>Conditioning treatment infused with nutrients to strengthen and nourish your natural lashes.</p>
-                <span class="service-price">[Price Coming Soon]</span>
+        </div>
+
+        <div class="pricing-category">
+            <h3 class="category-title">Add-on Services</h3>
+            <div class="pricing-grid">
+                <div class="pricing-item">
+                    <span class="service-name">Lash Spa<br><small>(with any full lash service)</small></span>
+                    <span class="service-price">+$20</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="service-name">Lash Fill</span>
+                    <span class="service-price">from $48</span>
+                </div>
+                <div class="pricing-item">
+                    <span class="service-name">Lash Lift & Tint</span>
+                    <span class="service-price">$68</span>
+                </div>
             </div>
         </div>
     </section>
@@ -912,8 +1022,8 @@
                     <li>
                         <div class="location-icon">📞</div>
                         <div>
-                            <strong>Phone</strong>
-                            <span>[Coming Soon]</span>
+                            <strong>Phone / WhatsApp</strong>
+                            <span><a href="tel:+6592721619" style="color:inherit;text-decoration:none;">+65 9272 1619</a></span>
                         </div>
                     </li>
                     <li>
@@ -937,8 +1047,8 @@
             <h2>Begin Your Journey</h2>
             <p class="contact-subtitle">Book your consultation today</p>
             <div class="contact-buttons">
-                <a href="#" class="contact-btn whatsapp">📱 WhatsApp Us</a>
-                <a href="#" class="contact-btn phone">📞 Call Now</a>
+                <a href="https://wa.me/6592721619" class="contact-btn whatsapp" target="_blank">📱 WhatsApp Us</a>
+                <a href="tel:+6592721619" class="contact-btn phone">📞 Call Now</a>
             </div>
         </div>
     </section>
